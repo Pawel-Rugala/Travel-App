@@ -25,10 +25,18 @@ h3 {
   font-family: $font-headings;
 }
 
+h3 {
+  text-align: center;
+}
+
 p,
 input,
 label,
 a,
 button {
   font-family: $font-others;
+}
+
+button {
+  font-size: $sm;
 }
