@@ -1,0 +1,21 @@
+$md-screen: 768px;
+$lg-screen: 1024px;
+$xl-screen: 1280px;
+
+@mixin tablet {
+  @media screen and (min-width: #{$md-screen}) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media screen and (min-width: #{$lg-screen}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: #{$xl-screen}) {
+    @content;
+  }
+}

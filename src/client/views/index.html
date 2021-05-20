@@ -7,6 +7,33 @@
     <title>Travel App</title>
   </head>
   <body>
-    <h1>Hello in Travel App</h1>
+    <header class="header">
+      <nav>
+        <h1>Travel App</h1>
+        <div id="icon"></div>
+      </nav>
+      <form class="header__search">
+        <div class="header__searchPart">
+          <label for="loc">Location</label>
+          <input type="text" name="loc" id="loc"
+            placeholder="Where you are going?">
+        </div>
+        <div class="header__searchPart">
+          <label for="checkin">Check-in</label>
+          <input type="date" name="checkin" id="checkin">
+        </div>
+        <div class="header__searchPart">
+          <label for="checkout">Check-out</label>
+          <input type="date" name="checkout" id="checkout">
+        </div>
+        <button id="search" class="header__submit" type="submit">
+        </button>
+      </form>
+      <div class="header__img">
+      </div>
+    </header>
+    <section class="section">
+      <h2 class="section__header">Your Trips</h2>
+    </section>
   </body>
 </html>
