@@ -1,25 +1,37 @@
 @import './colors';
+@import './mediaQueries.scss';
 
 .header {
   padding: 2.5rem;
   background: $gradient;
   width: 100%;
   box-sizing: border-box;
+  @include tablet {
+    padding: 4.5rem;
+  }
   &__search {
     background-color: $white;
     border-radius: 3.5rem;
     max-width: 80%;
-    margin: 5rem auto -15rem auto;
+    margin: 2.5rem auto -12.5rem auto;
     z-index: 1;
     position: relative;
     padding: 1rem 0.25rem;
     box-shadow: 0px 1px 8px 3px rgba(0, 0, 0, 0.25);
+    @include tablet {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      align-items: center;
+      padding: 0 1.5rem;
+      margin: 2.5rem auto -5rem auto;
+      max-width: 90%;
+    }
   }
   &__submit {
     border-radius: 2.5rem;
     border: none;
     background-color: $green;
-    padding: 1.25rem 5rem;
+    padding: 1.25rem 2.5rem;
     display: block;
     margin: 1.5rem auto;
     border: 1px solid $green;
@@ -35,6 +47,10 @@
     margin: 1.5rem auto;
     width: 80%;
     border-bottom: 1px solid $gray;
+    @include tablet {
+      border: none;
+      margin: 0 1rem;
+    }
   }
   &__img {
     width: 100%;
@@ -50,6 +66,8 @@
 
 .section {
   padding: 2.5rem;
+  @include tablet {
+  }
   &__header {
     border-bottom: 0.5rem solid $green;
   }
@@ -80,11 +98,18 @@ input {
   color: $black;
   background: none;
   outline: none;
+  @include tablet {
+    width: auto;
+  }
 }
 
 .card {
   box-shadow: 0px 1px 8px 3px rgba(0, 0, 0, 0.25);
   margin: 2.5rem 0;
+  width: 100%;
+  @include tablet {
+    margin: 0;
+  }
   &__img {
     background-image: url('../imgs//header-img-sm.jpg');
     background-position: center;
@@ -106,4 +131,11 @@ footer {
 
 footer p {
   margin: 1.5rem 0;
+}
+
+.grid {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 2.5rem;
 }
