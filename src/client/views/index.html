@@ -12,7 +12,7 @@
         <h1>Travel App</h1>
         <div id="icon"></div>
       </nav>
-      <form class="header__search">
+      <form class="header__search" onsubmit="return Client.handleSubmit(event)">
         <div class="header__searchPart">
           <label for="loc">Location</label>
           <input type="text" name="loc" id="loc"
