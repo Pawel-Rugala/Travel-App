@@ -5,6 +5,7 @@ import './styles/elements.scss';
 import Icon from './imgs/menu.svg';
 import SearchIcon from './imgs/search.svg';
 
+import postData from './js/postData';
 import handleSubmit from './js/handleSubmit';
 
 // Add the image to our existing div.
@@ -13,4 +14,4 @@ myIcon1.src = Icon;
 const elem1 = document.getElementById('icon');
 elem1.appendChild(myIcon1);
 
-export { handleSubmit };
+export { postData, handleSubmit };
