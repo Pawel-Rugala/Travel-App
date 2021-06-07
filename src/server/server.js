@@ -5,6 +5,9 @@ const dotenv = require('dotenv');
 
 // import APIs Functions
 const geoNames = require('./api/geoNames');
+const weatherbit = require('./api/weatherbit');
+const wiki = require('./api/wiki');
+const countries = require('./api/countries');
 
 dotenv.config();
 const app = express();
@@ -17,7 +20,7 @@ app.use(express.json());
 
 //api.geonames.org/postalCodeSearch?postalcode=9011&maxRows=10&username=demo
 
-http: app.get('/', (req, res) => {
+app.get('/', (req, res) => {
   res.send('hello');
 });
 
@@ -27,17 +30,55 @@ app.post('/fetch', async (req, res) => {
   const pixabayApi = process.env.PIXABAY;
   const { location, checkin, checkout } = req.body;
   let container = {};
+
   //Geolocation information
-  geoNames(location, geoApi)
+  await geoNames(location, geoApi)
     .then((data) => {
       if (data) {
-        const { geonames } = data;
-        container = { ...container, geonames };
+        const { toponymName, lat, lng, countryCode, countryName } =
+          data.geonames[0];
+        container = {
+          ...container,
+          location: toponymName,
+          checkin,
+          checkout,
+          lat,
+          lng,
+          countryName,
+          countryCode,
+        };
       } else throw 'error';
     })
     .catch((err) => console.log('runs', err));
 
-  //
+  // WeahterBit current weather information
+  await weatherbit(container.lat, container.lng, weatherApi)
+    .then((data) => {
+      if (data) {
+        const { temp, sunrise, sunset, wind_spd } = data.data[0];
+        container = {
+          ...container,
+          temp,
+          sunrise,
+          sunset,
+          wind_spd,
+        };
+      }
+    })
+    .catch((err) => {
+      console.log('runs', err);
+    });
+
+  await wiki(container.location).then((data) => {
+    container = {
+      ...container,
+      cityInfo: data,
+    };
+  });
+
+  await countries(container.countryCode);
+
+  console.log(container);
 
   // await fetch(
   //   `http://api.geonames.org/searchJSON?q=${location}&maxRows=1&username=${geoApi}`
