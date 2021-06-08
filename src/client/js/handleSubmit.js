@@ -8,8 +8,9 @@ const handleSubmit = (e) => {
     checkin: checkIn.value,
     checkout: checkOut.value,
   };
-  Client.postData('http://localhost:8081/fetch', reqData);
-  console.log(`handleSubmit: ${reqData}`);
+  Client.postData('http://localhost:8081/fetch', reqData).then((data) => {
+    console.log(data);
+  });
   location.value = '';
   checkIn.value = '';
   checkOut.value = '';

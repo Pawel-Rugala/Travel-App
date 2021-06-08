@@ -6,7 +6,28 @@ const countries = async (countryCode) => {
   );
   try {
     const newData = await res.json();
-    console.log(newData);
+    if (newData.capital) {
+      const {
+        capital,
+        region,
+        subregion,
+        population,
+        nativeName,
+        currencies,
+        languages,
+        flag,
+      } = newData;
+      return {
+        capital,
+        region,
+        subregion,
+        population,
+        nativeName,
+        currencies,
+        languages,
+        flag,
+      };
+    }
     throw 'no data';
   } catch (err) {
     console.log('error', err);
