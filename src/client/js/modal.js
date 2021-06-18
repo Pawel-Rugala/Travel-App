@@ -1,4 +1,4 @@
-const btns = document.getElementsByClassName('myBtn');
+const btns = document.getElementsByClassName('btn');
 const spans = document.getElementsByClassName('close');
 const modals = document.getElementsByClassName('modal');
 
@@ -15,7 +15,7 @@ console.log(spans);
 });
 
 window.onclick = (e) => {
-  [...modals].forEach((modal, ind) => {
+  [...modals].forEach((modal) => {
     if (e.target === modal) {
       modal.style.display = 'none';
     }

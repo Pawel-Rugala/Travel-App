@@ -4,6 +4,7 @@ import './styles/elements.scss';
 import './styles/modal.scss';
 
 import './js/modal';
+import './js/addTrip';
 
 import postData from './js/postData';
 import handleSubmit from './js/handleSubmit';
