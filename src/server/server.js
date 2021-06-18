@@ -2,6 +2,7 @@ const express = require('express');
 const fetch = require('node-fetch');
 const cors = require('cors');
 const dotenv = require('dotenv');
+const shortid = require('shortid');
 
 // import APIs Functions
 const geoNames = require('./api/geoNames');
@@ -21,10 +22,6 @@ app.use(express.json());
 
 //api.geonames.org/postalCodeSearch?postalcode=9011&maxRows=10&username=demo
 
-app.get('/', (req, res) => {
-  res.send('hello');
-});
-
 app.post('/fetch', async (req, res) => {
   const geoApi = process.env.GEO_API;
   const weatherApi = process.env.WEATHER_API;
@@ -40,6 +37,7 @@ app.post('/fetch', async (req, res) => {
           data.geonames[0];
         container = {
           ...container,
+          id: shortid.generate(),
           location: toponymName,
           checkin,
           checkout,

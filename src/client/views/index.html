@@ -8,44 +8,107 @@
   </head>
   <body>
     <header class="header">
-      <nav>
-        <h1>Travel App</h1>
-        <div id="icon"></div>
+      <nav class="header__nav">
+        <h1>Travel Planner</h1>
+        <button class="header__btn" id="addTripBtn">Add trip</button>
+
       </nav>
-      <form class="header__search" onsubmit="return Client.handleSubmit(event)">
-        <div class="header__searchPart">
-          <label for="loc">Location</label>
-          <input type="text" name="loc" id="loc"
-            placeholder="Where you are going?">
-        </div>
-        <div class="header__searchPart">
-          <label for="checkin">Check-in</label>
-          <input type="date" name="checkin" id="checkin">
-        </div>
-        <div class="header__searchPart">
-          <label for="checkout">Check-out</label>
-          <input type="date" name="checkout" id="checkout">
-        </div>
-        <button id="search" class="header__submit" type="submit">S
-        </button>
-      </form>
-      <div class="header__img">
-      </div>
     </header>
-    <section class="section">
-      <h2 class="section__header">Popular Locations</h2>
-      <div class="grid">
+    <section class="section popular">
+      <h2>Popular Trips</h2>
+      <div class="cards">
         <div class="card">
-          <div class="card__img"></div>
-          <h3 class="card__header">Zakopane, Poland</h3>
+          <div class="card__img" style="background-image:
+            url(
+            https://images.unsplash.com/photo-1607187227188-7e1e96961eaf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80
+            )"></div>
+          <div class="card__desc">
+            <h4 class="card__title">Zakopane, Poland</h4>
+            <p class="card__p">See knight sleeping between the mountains</p>
+          </div>
         </div>
         <div class="card">
-          <div class="card__img"></div>
-          <h3 class="card__header">Zakopane, Poland</h3>
+          <div class="card__img" style="background-image:
+            url(
+            https://images.unsplash.com/photo-1607187227188-7e1e96961eaf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80
+            )"></div>
+          <div class="card__desc">
+            <h4 class="card__title">Zakopane, Poland</h4>
+            <p class="card__p">See knight sleeping between the mountains</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__img" style="background-image:
+            url(
+            https://images.unsplash.com/photo-1607187227188-7e1e96961eaf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80
+            )"></div>
+          <div class="card__desc">
+            <h4 class="card__title">Zakopane, Poland</h4>
+            <p class="card__p">See knight sleeping between the mountains</p>
+          </div>
+        </div>
+        <div class="card" id="myBtn">
+          <div class="card__img" style="background-image:
+            url(
+            https://images.unsplash.com/photo-1607187227188-7e1e96961eaf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80
+            )"></div>
+          <div class="card__desc">
+            <h4 class="card__title">Zakopane, Poland</h4>
+            <p class="card__p">See knight sleeping between the mountains</p>
+          </div>
         </div>
       </div>
     </section>
-    <footer>
+    <section class="section yourTrip">
+      <h2>Your Trips</h2>
+      <div class="cards" id="cards">
+      </div>
+    </section>
+    <section class="section">
+      <h2>Your trips</h2>
+      <button class="myBtn">Open Modal</button>
+
+      <!-- The Modal -->
+      <div class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <div class="modal-header">
+            <span class="close">&times;</span>
+            <h2>Modal Header</h2>
+          </div>
+          <div class="modal-body">
+            <p>Some text in the Modal Body</p>
+            <p>Some other text...</p>
+          </div>
+          <div class="modal-footer">
+            <h3>Modal Footer</h3>
+          </div>
+        </div>
+
+      </div><button class="myBtn">Open Modal</button>
+
+      <!-- The Modal -->
+      <div class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <div class="modal-header">
+            <span class="close">&times;</span>
+            <h2>Modal Header</h2>
+          </div>
+          <div class="modal-body">
+            <p>qweqwasd</p>
+            <p>Some other text...</p>
+          </div>
+          <div class="modal-footer">
+            <h3>Modal Footer</h3>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <footer class="footer">
       <p>Made by Pawel Rugala</p>
       <p>GitHub</p>
       <p>LinkedIn</p>

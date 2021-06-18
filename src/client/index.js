@@ -1,17 +1,12 @@
 import './styles/base.scss';
 import './styles/typography.scss';
 import './styles/elements.scss';
+import './styles/modal.scss';
 
-import Icon from './imgs/menu.svg';
-import SearchIcon from './imgs/search.svg';
+import './js/modal';
 
 import postData from './js/postData';
 import handleSubmit from './js/handleSubmit';
-
-// Add the image to our existing div.
-const myIcon1 = new Image();
-myIcon1.src = Icon;
-const elem1 = document.getElementById('icon');
-elem1.appendChild(myIcon1);
+// import { handleOpen, handleClose } from './js/modal';
 
 export { postData, handleSubmit };
