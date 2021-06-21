@@ -21,6 +21,15 @@
               <h2>Modal Header</h2>
             </div>
             <div class="modal-body">
+              <form onsubmit="return Client.handleSubmit(event)">
+                <label for="loc">Location</label>
+                <input type="text" name="loc" id="loc">
+                <label for="checkin">Check in</label>
+                <input type="date" name="checkin" id="checkin">
+                <label for="checkout">Check out</label>
+                <input type="date" name="checkout" id="checkout">
+                <button type="submit">Submit</button>
+              </form>
               <p>Some text in the Modal Body</p>
               <p>Some other text...</p>
             </div>

@@ -1,79 +1,80 @@
-@import './colors';
-@import './mediaQueries.scss';
+@import "./colors";
+@import "./mediaQueries.scss";
 
 @mixin sectionPadding {
-  padding: 2rem 2.5rem;
-  box-sizing: border-box;
-  @include tablet {
-    padding: 2rem 4.5rem;
-  }
+ padding: 2rem 2.5rem;
+ box-sizing: border-box;
+ @include tablet {
+  padding: 2rem 4.5rem;
+ }
 }
 
 .header {
-  @include sectionPadding;
-  background: $gradient;
-  &__nav {
-    display: flex;
-    justify-content: space-between;
-  }
-  &__btn {
-    background: none;
-    border: 2px solid $white;
-    padding: 0.5rem 1.5rem;
-    border-radius: 2.5rem;
-    color: $white;
-    cursor: pointer;
-  }
+ @include sectionPadding;
+ background: $gradient;
+ &__nav {
+  display: flex;
+  justify-content: space-between;
+ }
+ &__btn {
+  background: none;
+  border: 2px solid $white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 2.5rem;
+  color: $white;
+  cursor: pointer;
+ }
 }
 
 .section {
-  @include sectionPadding;
+ @include sectionPadding;
 }
 
 .cards {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+ display: flex;
+ justify-content: center;
+ flex-wrap: wrap;
 }
 
 .card {
-  box-shadow: 0px 1px 8px 3px rgba(0, 0, 0, 0.25);
-  margin: 1rem;
-  cursor: pointer;
+ box-shadow: 0px 1px 8px 3px rgba(0, 0, 0, 0.25);
+ margin: 1rem;
+ cursor: pointer;
+ max-width: 35rem;
+ @include tablet {
+  margin: 2rem;
+ }
+ &__img {
+  width: 100%;
+  height: 17rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   @include tablet {
-    margin: 2rem;
+   height: 25rem;
   }
-  &__img {
-    width: 100%;
-    height: 17rem;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    @include tablet {
-      height: 25rem;
-    }
+ }
+ &__desc {
+  padding: 0.5rem;
+  max-width: 25rem;
+  @include tablet {
+   padding: 1rem;
+   max-width: 35rem;
   }
-  &__desc {
-    padding: 0.5rem;
-    max-width: 25rem;
-    @include tablet {
-      padding: 1rem;
-      max-width: 35rem;
-    }
-  }
-  &__title {
-    text-align: center;
-    margin: 2rem 0 1rem 0;
-  }
-  &__p {
-    text-align: center;
-    color: grey;
-    margin-bottom: 2rem;
-  }
+ }
+ &__title {
+  text-align: center;
+  margin: 2rem 0 1rem 0;
+ }
+ &__p {
+  text-align: center;
+  color: grey;
+  margin-bottom: 2rem;
+ }
 }
 
 .footer {
-  @include sectionPadding;
+ @include sectionPadding;
 }
 
 // .header {
@@ -211,156 +212,156 @@
 
 /* The Modal (background) */
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0, 0, 0); /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
-  -webkit-animation-name: fadeIn; /* Fade in the background */
-  -webkit-animation-duration: 0.4s;
-  animation-name: fadeIn;
-  animation-duration: 0.4s;
+ display: none; /* Hidden by default */
+ position: fixed; /* Stay in place */
+ z-index: 1; /* Sit on top */
+ left: 0;
+ top: 0;
+ width: 100%; /* Full width */
+ height: 100%; /* Full height */
+ overflow: auto; /* Enable scroll if needed */
+ background-color: rgb(0, 0, 0); /* Fallback color */
+ background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+ -webkit-animation-name: fadeIn; /* Fade in the background */
+ -webkit-animation-duration: 0.4s;
+ animation-name: fadeIn;
+ animation-duration: 0.4s;
 }
 
 /* Modal Content */
 .modal-content {
-  position: fixed;
-  bottom: 0;
-  background-color: #fefefe;
-  width: 100%;
-  -webkit-animation-name: slideIn;
-  -webkit-animation-duration: 0.4s;
-  animation-name: slideIn;
-  animation-duration: 0.4s;
+ position: fixed;
+ bottom: 0;
+ background-color: #fefefe;
+ width: 100%;
+ -webkit-animation-name: slideIn;
+ -webkit-animation-duration: 0.4s;
+ animation-name: slideIn;
+ animation-duration: 0.4s;
 }
 
 /* The Close Button */
 .close,
 #closeBtn {
-  color: white;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
+ color: white;
+ float: right;
+ font-size: 28px;
+ font-weight: bold;
 }
 
 .close:hover,
 .close:focus,
 #closeBtn:hover,
 #closeBtn:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
+ color: #000;
+ text-decoration: none;
+ cursor: pointer;
 }
 
 .modal-header {
-  padding: 2px 16px;
-  background-color: #5cb85c;
-  color: white;
+ padding: 2px 16px;
+ background-color: #5cb85c;
+ color: white;
 }
 
 .modal-body {
-  padding: 2px 16px;
+ padding: 2px 16px;
 }
 
 .modal-footer {
-  padding: 2px 16px;
-  background-color: #5cb85c;
-  color: white;
+ padding: 2px 16px;
+ background-color: #5cb85c;
+ color: white;
 }
 
 /* Add Animation */
 @-webkit-keyframes slideIn {
-  from {
-    bottom: -300px;
-    opacity: 0;
-  }
-  to {
-    bottom: 0;
-    opacity: 1;
-  }
+ from {
+  bottom: -300px;
+  opacity: 0;
+ }
+ to {
+  bottom: 0;
+  opacity: 1;
+ }
 }
 
 @keyframes slideIn {
-  from {
-    bottom: -300px;
-    opacity: 0;
-  }
-  to {
-    bottom: 0;
-    opacity: 1;
-  }
+ from {
+  bottom: -300px;
+  opacity: 0;
+ }
+ to {
+  bottom: 0;
+  opacity: 1;
+ }
 }
 
 @-webkit-keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+ from {
+  opacity: 0;
+ }
+ to {
+  opacity: 1;
+ }
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+ from {
+  opacity: 0;
+ }
+ to {
+  opacity: 1;
+ }
 }
 
 .addModal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0, 0, 0); /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+ display: none; /* Hidden by default */
+ position: fixed; /* Stay in place */
+ z-index: 1; /* Sit on top */
+ padding-top: 100px; /* Location of the box */
+ left: 0;
+ top: 0;
+ width: 100%; /* Full width */
+ height: 100%; /* Full height */
+ overflow: auto; /* Enable scroll if needed */
+ background-color: rgb(0, 0, 0); /* Fallback color */
+ background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 }
 
 .addContent {
-  position: relative;
-  background-color: #fefefe;
-  margin: auto;
-  padding: 0;
-  border: 1px solid #888;
-  width: 80%;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  -webkit-animation-name: animatetop;
-  -webkit-animation-duration: 0.4s;
-  animation-name: animatetop;
-  animation-duration: 0.4s;
+ position: relative;
+ background-color: #fefefe;
+ margin: auto;
+ padding: 0;
+ border: 1px solid #888;
+ width: 80%;
+ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+ -webkit-animation-name: animatetop;
+ -webkit-animation-duration: 0.4s;
+ animation-name: animatetop;
+ animation-duration: 0.4s;
 }
 
 /* Add Animation */
 @-webkit-keyframes animatetop {
-  from {
-    top: -300px;
-    opacity: 0;
-  }
-  to {
-    top: 0;
-    opacity: 1;
-  }
+ from {
+  top: -300px;
+  opacity: 0;
+ }
+ to {
+  top: 0;
+  opacity: 1;
+ }
 }
 
 @keyframes animatetop {
-  from {
-    top: -300px;
-    opacity: 0;
-  }
-  to {
-    top: 0;
-    opacity: 1;
-  }
+ from {
+  top: -300px;
+  opacity: 0;
+ }
+ to {
+  top: 0;
+  opacity: 1;
+ }
 }

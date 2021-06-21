@@ -1,32 +1,18 @@
-const handleSubmit = (e) => {
- e.preventDefault();
- const location = document.getElementById("loc");
- const checkIn = document.getElementById("checkin");
- const checkOut = document.getElementById("checkout");
+const renderTrips = (data) => {
  const cards = document.getElementById("cards");
- const popular = document.querySelector(".popular");
- console.log(popular);
- const modal = document.getElementById("addModal");
- //  const header = document.querySelector(".header");
- const reqData = {
-  location: location.value,
-  checkin: checkIn.value,
-  checkout: checkOut.value,
- };
- Client.postData("http://localhost:8081/fetch", reqData).then((data) => {
-  console.log(data);
-  Client.saveTrip(data);
-  const checks = new Date(data.checkin).getTime();
-  const now = new Date().getTime();
-  const countdown = Math.floor((checks - now) / (1000 * 60 * 60 * 24));
-  const element = `
+ if (data.length > 0) {
+  [...data].forEach((trip) => {
+   const checks = new Date(data.checkin).getTime();
+   const now = new Date().getTime();
+   const countdown = Math.floor((checks - now) / (1000 * 60 * 60 * 24));
+   const element = `
           <div class="card btn">
           <div class="card__img" style="background-image:
             url(
-            ${data.webformatURL}
+            ${trip.webformatURL}
             )"></div>
           <div class="card__desc">
-            <h4 class="card__title">${data.location}, ${data.countryName}</h4>
+            <h4 class="card__title">${trip.location}, ${trip.countryName}</h4>
             <p class="card__p">Your trip in ${countdown} days</p>
           </div>
         </div>
@@ -58,14 +44,9 @@ const handleSubmit = (e) => {
           </div>
         </div>
     `;
-  cards.insertAdjacentHTML("afterend", element);
-  modal.style.display = "none";
-  popular.style.display = "none";
-  Client.checkModals();
- });
- location.value = "";
- checkIn.value = "";
- checkOut.value = "";
+   return cards.insertAdjacentHTML("afterend", element);
+  });
+ }
 };
 
-export default handleSubmit;
+export default renderTrips;
