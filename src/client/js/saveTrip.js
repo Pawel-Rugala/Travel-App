@@ -7,6 +7,7 @@ const saveTrip = (trip) => {
  } else if (trip) {
   localStorage.setItem("trips", JSON.stringify([trip]));
  }
+ Client.checkModals();
 };
 
 export default saveTrip;

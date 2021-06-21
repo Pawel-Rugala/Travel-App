@@ -1,5 +1,6 @@
 const handleSubmit = (e) => {
  e.preventDefault();
+ Client.loadAnimation(true);
  const location = document.getElementById("loc");
  const checkIn = document.getElementById("checkin");
  const checkOut = document.getElementById("checkout");
@@ -18,6 +19,7 @@ const handleSubmit = (e) => {
   Client.saveTrip(data);
   Client.renderTrip(data);
   Client.checkModals();
+  Client.loadAnimation(false);
   modal.style.display = "none";
  });
  location.value = "";
