@@ -3,7 +3,6 @@ const handleSubmit = (e) => {
  Client.loadAnimation(true);
  const location = document.getElementById("loc");
  const checkIn = document.getElementById("checkin");
- const checkOut = document.getElementById("checkout");
  const cards = document.getElementById("cards");
  const popular = document.querySelector(".popular");
  console.log(popular);
@@ -12,7 +11,6 @@ const handleSubmit = (e) => {
  const reqData = {
   location: location.value,
   checkin: checkIn.value,
-  checkout: checkOut.value,
  };
  Client.postData("http://localhost:8081/fetch", reqData).then((data) => {
   console.log(data);

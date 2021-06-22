@@ -16,6 +16,8 @@ import postData from "./js/postData";
 import handleSubmit from "./js/handleSubmit";
 // import { handleOpen, handleClose } from './js/modal';
 
+checkModals();
+
 export {
  renderTrips,
  postData,

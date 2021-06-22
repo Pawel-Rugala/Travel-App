@@ -1,222 +1,356 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Travel App</title>
-  </head>
-  <body>
-    <header class="header">
-      <nav class="header__nav">
-        <h1>Travel Planner</h1>
-        <button class="header__btn btn" id="addBtn">Add trip</button>
-        <!-- The Modal -->
-        <div id="addModal" class="addModal modal">
-
-          <!-- Modal content -->
-          <div class="addContent">
-            <div class="modal-header">
-              <span id="closeBtn">&times;</span>
-              <h2>Modal Header</h2>
-            </div>
-            <div class="modal-body">
-              <form onsubmit="return Client.handleSubmit(event)">
-                <label for="loc">Location</label>
-                <input type="text" name="loc" id="loc">
-                <label for="checkin">Check in</label>
-                <input type="date" name="checkin" id="checkin">
-                <label for="checkout">Check out</label>
-                <input type="date" name="checkout" id="checkout">
-                <button type="submit">Submit</button>
-              </form>
-              <p>Some text in the Modal Body</p>
-              <p>Some other text...</p>
-            </div>
-            <div class="modal-footer">
-              <h3>Modal Footer</h3>
-                  <div class="lds-roller">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                  </div>
-            </div>
-          </div>
-
-        </div>
-      </nav>
-    </header>
-    <section class="section popular">
-      <h2>Popular Trips</h2>
-      <div class="cards">
-
-        <div class="card btn">
-          <div class="card__img" style="background-image:
-            url(
-            https://images.unsplash.com/photo-1607187227188-7e1e96961eaf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80
-            )"></div>
-          <div class="card__desc">
-            <h4 class="card__title">Zakopane, Poland</h4>
-            <p class="card__p">See knight sleeping between the mountains</p>
-          </div>
-        </div>
-        <!-- The Modal -->
-        <div class="modal">
-          <!-- Modal content -->
-          <div class="modal-content">
-            <div class="modal-header">
-              <span class="close">&times;</span>
-              <h2>Zakopane, Poland</h2>
-            </div>
-            <div class="modal-body">
-              <p>Nonumy erat diam lorem ut accusam tempor. Amet accusam et
-                gubergren vero. Stet labore erat sea et. Tempor sit erat.</p>
-              <p>Nonumy erat diam lorem ut accusam tempor. Amet accusam et
-                gubergren vero. Stet labore erat sea et. Tempor sit erat.</p>
-              <p>Nonumy erat diam lorem ut accusam tempor. Amet accusam et
-                gubergren vero. Stet labore erat sea et. Tempor sit erat.</p>
-              <p>Nonumy erat diam lorem ut accusam tempor. Amet accusam et
-                gubergren vero. Stet labore erat sea et. Tempor sit erat.</p>
-              <div class="card__img" style="background-image:
-                url(
-                https://images.unsplash.com/photo-1607187227188-7e1e96961eaf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80
-                ); height: 50rem;"></div>
-            </div>
-            <div class="modal-footer">
-              <h3>See knight sleeping between the mountains</h3>
-            </div>
-          </div>
-        </div>
-
-        <div class="card btn">
-          <div class="card__img" style="background-image:
-            url(
-            https://images.unsplash.com/photo-1607187227188-7e1e96961eaf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80
-            )"></div>
-          <div class="card__desc">
-            <h4 class="card__title">Zakopane, Poland</h4>
-            <p class="card__p">See knight sleeping between the mountains</p>
-          </div>
-        </div>
-        <!-- The Modal -->
-        <div class="modal">
-          <!-- Modal content -->
-          <div class="modal-content">
-            <div class="modal-header">
-              <span class="close">&times;</span>
-              <h2>Zakopane, Poland</h2>
-            </div>
-            <div class="modal-body">
-              <p>Nonumy erat diam lorem ut accusam tempor. Amet accusam et
-                gubergren vero. Stet labore erat sea et. Tempor sit erat.</p>
-              <p>Nonumy erat diam lorem ut accusam tempor. Amet accusam et
-                gubergren vero. Stet labore erat sea et. Tempor sit erat.</p>
-              <p>Nonumy erat diam lorem ut accusam tempor. Amet accusam et
-                gubergren vero. Stet labore erat sea et. Tempor sit erat.</p>
-              <p>Nonumy erat diam lorem ut accusam tempor. Amet accusam et
-                gubergren vero. Stet labore erat sea et. Tempor sit erat.</p>
-              <div class="card__img" style="background-image:
-                url(
-                https://images.unsplash.com/photo-1607187227188-7e1e96961eaf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80
-                ); height: 50rem;"></div>
-            </div>
-            <div class="modal-footer">
-              <h3>See knight sleeping between the mountains</h3>
-            </div>
-          </div>
-        </div>
-        <div class="card btn">
-          <div class="card__img" style="background-image:
-            url(
-            https://images.unsplash.com/photo-1607187227188-7e1e96961eaf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80
-            )"></div>
-          <div class="card__desc">
-            <h4 class="card__title">Zakopane, Poland</h4>
-            <p class="card__p">See knight sleeping between the mountains</p>
-          </div>
-        </div>
-        <!-- The Modal -->
-        <div class="modal">
-          <!-- Modal content -->
-          <div class="modal-content">
-            <div class="modal-header">
-              <span class="close">&times;</span>
-              <h2>Zakopane, Poland</h2>
-            </div>
-            <div class="modal-body">
-              <p>Nonumy erat diam lorem ut accusam tempor. Amet accusam et
-                gubergren vero. Stet labore erat sea et. Tempor sit erat.</p>
-              <p>Nonumy erat diam lorem ut accusam tempor. Amet accusam et
-                gubergren vero. Stet labore erat sea et. Tempor sit erat.</p>
-              <p>Nonumy erat diam lorem ut accusam tempor. Amet accusam et
-                gubergren vero. Stet labore erat sea et. Tempor sit erat.</p>
-              <p>Nonumy erat diam lorem ut accusam tempor. Amet accusam et
-                gubergren vero. Stet labore erat sea et. Tempor sit erat.</p>
-              <div class="card__img" style="background-image:
-                url(
-                https://images.unsplash.com/photo-1607187227188-7e1e96961eaf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80
-                ); height: 50rem;"></div>
-            </div>
-            <div class="modal-footer">
-              <h3>See knight sleeping between the mountains</h3>
-            </div>
-          </div>
-        </div>
-        <div class="card btn">
-          <div class="card__img" style="background-image:
-            url(
-            https://images.unsplash.com/photo-1607187227188-7e1e96961eaf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80
-            )"></div>
-          <div class="card__desc">
-            <h4 class="card__title">Zakopane, Poland</h4>
-            <p class="card__p">See knight sleeping between the mountains</p>
-          </div>
-        </div>
-        <!-- The Modal -->
-        <div class="modal">
-          <!-- Modal content -->
-          <div class="modal-content">
-            <div class="modal-header">
-              <span class="close">&times;</span>
-              <h2>Zakopane, Poland</h2>
-            </div>
-            <div class="modal-body">
-              <p>Nonumy erat diam lorem ut accusam tempor. Amet accusam et
-                gubergren vero. Stet labore erat sea et. Tempor sit erat.</p>
-              <p>Nonumy erat diam lorem ut accusam tempor. Amet accusam et
-                gubergren vero. Stet labore erat sea et. Tempor sit erat.</p>
-              <p>Nonumy erat diam lorem ut accusam tempor. Amet accusam et
-                gubergren vero. Stet labore erat sea et. Tempor sit erat.</p>
-              <p>Nonumy erat diam lorem ut accusam tempor. Amet accusam et
-                gubergren vero. Stet labore erat sea et. Tempor sit erat.</p>
-              <div class="card__img" style="background-image:
-                url(
-                https://images.unsplash.com/photo-1607187227188-7e1e96961eaf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80
-                ); height: 50rem;"></div>
-            </div>
-            <div class="modal-footer">
-              <h3>See knight sleeping between the mountains</h3>
-            </div>
-          </div>
-        </div>
+ <head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Travel App</title>
+ </head>
+ <body>
+  <header class="header">
+   <nav class="header__nav">
+    <h1>Travel Planner</h1>
+    <button class="header__btn btn" id="addBtn">Add trip</button>
+    <!-- The Modal -->
+    <div id="addModal" class="addModal modal">
+     <!-- Modal content -->
+     <div class="addContent">
+      <div class="modal-header">
+       <span id="closeBtn" class="close">&times;</span>
+       <h2>Modal Header</h2>
       </div>
-
-    </section>
-    <section class="section yourTrip">
-      <h2>Your Trips</h2>
-      <div class="cards" id="cards">
+      <div class="modal-body">
+       <form onsubmit="return Client.handleSubmit(event)">
+        <label for="loc">Location</label>
+        <input type="text" name="loc" id="loc" />
+        <label for="checkin">Check in</label>
+        <input type="date" name="checkin" id="checkin" />
+        <button type="submit">Submit</button>
+       </form>
       </div>
-    </section>
-    <footer class="footer">
-      <p>Made by Pawel Rugala</p>
-      <p>GitHub</p>
-      <p>LinkedIn</p>
-      <p>Facebook</p>
-    </footer>
-  </body>
+      <div class="modal-footer">
+       <div class="lds-roller">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </nav>
+  </header>
+  <section class="section popular">
+   <h2>Popular Trips</h2>
+   <div class="cards">
+    <div class="card btn">
+     <div
+      class="card__img"
+      style="
+       background-image: url(https://pixabay.com/get/gfeef20ee54b3d95dfa23dcd2d3bbe5db25e25d0c46039ae734355db5c8fe3528135a6f5a6729e2598878c2ff9ec6f9eb9abd9d276d1621cc427a73b4b86bdef6_640.jpg);
+      "
+     ></div>
+     <div class="card__desc">
+      <h4 class="card__title">Port Elizabeth, South Africa</h4>
+      <p class="card__p">
+       Major seaport city and the most populous city in the Eastern Cape
+      </p>
+     </div>
+    </div>
+    <!-- The Modal -->
+    <div class="modal">
+     <!-- Modal content -->
+     <div class="modal-content">
+      <div class="modal-header">
+       <h2>Port Elizabeth</h2>
+       <div class="content"></div>
+       <span class="close">&times;</span>
+      </div>
+      <div class="modal-body">
+       <div>
+        <h3>About the city</h3>
+        <p>
+         Port Elizabeth, officially renamed Gqeberha (Xhosa: [ᶢǃʱɛ̀ɓéːxà]
+         [CLICK]-eh-BAY-kha) and colloquially often referred to as PE, is a
+         major seaport city and the most populous city in the Eastern Cape
+         province of South Africa. It is the seat of the Nelson Mandela Bay
+         Metropolitan Municipality, South Africa's second-largest metropolitan
+         district by area size. It is the sixth-most-populous city in South
+         Africa and is the cultural, economic and financial centre of the
+         Eastern Cape.The second-oldest city in South Africa, it was founded as
+         \"Port Elizabeth\" in 1820 by the government of the Cape Colony when
+         4,000 British colonists settled Algoa Bay to strengthen the border
+         region between the Cape Colony and the Xhosa. It is nicknamed \"The
+         Friendly City\" or \"The Windy City\". In 2019, the Eastern Cape
+         Geographical Names Committee recommended that Port Elizabeth be renamed
+         Gqeberha, after the Xhosa and Southern Khoe name for the Baakens River
+         that flows through the city. The city's name change was officially
+         gazetted on 23 February 2021.Located on the western portion of Algoa
+         Bay along the southeastern coast of South Africa, the city lies 770 km
+         east of Cape Town. It is east of the Garden Route and faces the Indian
+         Ocean. It covers 251 square kilometers of the Nelson Mandela Bay
+         metropolitan area, South Africa's sixth-largest metropolitan
+         municipality. The city's warm oceanic climate ranks it among the top
+         cities in the world for pleasant year-round weather. The city is known
+         for many blue-flag beaches along the city's urban coastline; its
+         popularity as an international and local holiday destination; and its
+         rich and diverse cultural heritage.
+        </p>
+       </div>
+       <div
+        class="card__img"
+        style="
+         background-image: url(https://pixabay.com/get/g8a2099d62d451b1587687456e944dceb7dc40ae5d61ea2a27f02953a17bf33e2aad75872b9f1f2e30f446ef36e9d36cbe48f6c69a937e2ae575f2b849ed66b4e_1280.jpg);
+         height: 40rem;
+        "
+       ></div>
+      </div>
+      <div class="modal-footer">
+       <h3>South Africa</h3>
+       <img src="https://restcountries.eu/data/zaf.svg" />
+       <div class="content">
+        <p>Population: 55.653.654</p>
+        <p>Capital city: Pretoria</p>
+        <p>Langauge: Afrikaans</p>
+        <p>Currency: South African rand</p>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="card btn">
+     <div
+      class="card__img"
+      style="
+       background-image: url(https://pixabay.com/get/g326a0cfc016b633c5949c6c86a1766b392d5135cfde4e03a1a98b2f062f6a25f7dd5c90fcd8cd65883b9aa9d3a04f812678ad97e2b04c3cb0503cc0d9a97b846_640.jpg);
+      "
+     ></div>
+     <div class="card__desc">
+      <h4 class="card__title">Aspen, United States</h4>
+      <p class="card__p">Secret history within mountains</p>
+     </div>
+    </div>
+    <!-- The Modal -->
+    <div class="modal">
+     <!-- Modal content -->
+     <div class="modal-content">
+      <div class="modal-header">
+       <h2>Aspen</h2>
+       <div class="content">
+        <!-- <p>Weather info</p>
+        <p>Sunrise</p>
+        <p>Sunset</p>
+        <p>Wind speed</p> -->
+       </div>
+       <span class="close">&times;</span>
+      </div>
+      <div class="modal-body">
+       <div>
+        <h3>About the country</h3>
+        <p>
+         The United States of America (U.S.A. or USA), commonly known as the
+         United States (U.S. or US) or America, is a country primarily located
+         in North America. It consists of 50 states, a federal district, five
+         major unincorporated territories, 326 Indian reservations, and some
+         minor possessions. At 3.8 million square miles (9.8 million square
+         kilometers), it is the world's third- or fourth-largest country by
+         total area. It borders Canada to the north and Mexico to the south.
+         With a population of more than 331 million people, it is the third most
+         populous country in the world. The national capital is Washington,
+         D.C., and the most populous city is New York City.\nPaleo-Indians
+         migrated from Siberia to the North American mainland at least 12,000
+         years ago, and European colonization began in the 16th century. The
+         United States emerged from the thirteen British colonies established
+         along the East Coast. Disputes over taxation and political
+         representation with Great Britain led to the American Revolutionary War
+         (1775–1783), which established independence. In the late 18th century,
+         the U.S. began expanding across North America, gradually obtaining new
+         territories, sometimes through war, frequently displacing Native
+         Americans, and admitting new states; by 1848, the United States spanned
+         the continent.
+        </p>
+       </div>
+       <div
+        class="card__img"
+        style="
+         background-image: url(https://pixabay.com/get/g2125968d18b78ec6e72b9fe51ec8a65dec92a5cdf36d4c94d7bbf145b62c3ed3cd61b4d7f163ab6dc75d63a82199a1c78b4773386241e1d11ecec245e00f1802_1280.jpg);
+         height: 40rem;
+        "
+       ></div>
+      </div>
+      <div class="modal-footer">
+       <h3>United States</h3>
+       <img src="https://restcountries.eu/data/usa.svg" />
+       <div class="content">
+        <p>Population: 323.947.000</p>
+        <p>Capital city: Washington, D.C.</p>
+        <p>Langauge: English</p>
+        <p>Currency: United States dollar</p>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="card btn">
+     <div
+      class="card__img"
+      style="
+       background-image: url(https://pixabay.com/get/g2bdb26bad09415ae79363f2693de997c8f66aa3e5987acd499901f7e195c12bede4ea03fe9b90887791a13327af7dc8a1cfc30d3c3a475ad10b7444878861a09_640.jpg);
+      "
+     ></div>
+     <div class="card__desc">
+      <h4 class="card__title">Kyoto, Japan</h4>
+      <p class="card__p">Deep breath and mindfulness</p>
+     </div>
+    </div>
+    <!-- The Modal -->
+    <div class="modal">
+     <!-- Modal content -->
+     <div class="modal-content">
+      <div class="modal-header">
+       <h2>Kyoto</h2>
+       <div class="content">
+        <!-- <p>Weather info</p>
+        <p>Sunrise</p>
+        <p>Sunset</p>
+        <p>Wind speed</p> -->
+       </div>
+       <span class="close">&times;</span>
+      </div>
+      <div class="modal-body">
+       <div>
+        <h3>About the city</h3>
+        <p>
+         Kyoto (; Japanese: 京都, Kyōto [kʲoꜜːto] (listen)), officially Kyoto
+         City (京都市, Kyōto-shi, [kʲoːtoꜜɕi] (listen)), is the capital city of
+         Kyoto Prefecture in Japan. Located in the Kansai region on the island
+         of Honshu, Kyoto forms a part of the Keihanshin metropolitan area along
+         with Osaka and Kobe. As of 2021, the city had a population of 1.45
+         million, making up 57% of the prefecture's total population.\n\n\n==
+         Overview ==\nIn 794, Kyoto (then known as Heian-kyō) was chosen as the
+         new seat of Japan's imperial court. The original city was arranged in
+         accordance with traditional Chinese feng shui following the model of
+         the ancient Chinese capital of Chang'an. The Imperial Palace faced
+         south, resulting in Ukyō (the right sector of the capital) being on the
+         west while Sakyō (the left sector) is on the east. The streets in the
+         modern-day wards of Nakagyō, Shimogyō, and Kamigyō-ku still follow a
+         grid pattern.\nThe emperors of Japan ruled from Kyoto in the following
+         eleven centuries until 1869, when the court relocated to Tokyo. The
+         city was devastated during the Ōnin War in the 15th century and went
+         into an extended period of decline, but gradually revived under the
+         Tokugawa shogunate (1600–1868) and flourished as a major city in Japan.
+         The modern municipality of Kyoto was established in 1889.
+        </p>
+       </div>
+       <div
+        class="card__img"
+        style="
+         background-image: url(https://pixabay.com/get/g522c44f5935670a9bce837840bd3029af419bcfb4328c0755f507a7b2835fdf0c2c9e4a44a8fc3650d60f81e2c2346166c05cfb1ed201065df9a5ee7143075ca_1280.jpg);
+         height: 40rem;
+        "
+       ></div>
+      </div>
+      <div class="modal-footer">
+       <h3>Japan</h3>
+       <img src="https://restcountries.eu/data/jpn.svg" />
+       <div class="content">
+        <p>Population: 126.960.000</p>
+        <p>Capital city: Tokyo</p>
+        <p>Langauge: Japanese</p>
+        <p>Currency: Japanese yen</p>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="card btn">
+     <div
+      class="card__img"
+      style="
+       background-image: url(https://pixabay.com/get/g55609e27c10d7dc9c64435b43d38e34b091a635d50776b344686a493c0ad55144a4dd1d752e69f5b0a387f47d7ce817c7c5873d8c1f39a6b5c7b315d17d170c9_640.jpg);
+      "
+     ></div>
+     <div class="card__desc">
+      <h4 class="card__title">Valencia</h4>
+      <p class="card__p">Top notch food & culture</p>
+     </div>
+    </div>
+    <!-- The Modal -->
+    <div class="modal">
+     <!-- Modal content -->
+     <div class="modal-content">
+      <div class="modal-header">
+       <h2>Valencia</h2>
+       <div class="content">
+        <!-- <p>Weather info</p>
+        <p>Sunrise</p>
+        <p>Sunset</p>
+        <p>Wind speed</p> -->
+       </div>
+       <span class="close">&times;</span>
+      </div>
+      <div class="modal-body">
+       <div>
+        <h3>About the city</h3>
+        <p>
+         Valencia (Spanish: [baˈlenθja]), officially València (Valencian:
+         [baˈlensia] (locally) or [vaˈlensia]), is the capital of the autonomous
+         community of Valencia and the third-largest city in Spain after Madrid
+         and Barcelona, surpassing 800,000 inhabitants in the municipality. The
+         wider urban area also comprising the neighbouring municipalities has a
+         population of around 1.6 million. Valencia is Spain's third-largest
+         metropolitan area, with a population ranging from 1.7 to 2.5 million
+         depending on how the metropolitan area is defined. The Port of Valencia
+         is the 5th-busiest container port in Europe and the busiest container
+         port on the Mediterranean Sea. The city is ranked as a Gamma-level
+         global city by the Globalization and World Cities Research
+         Network.Valencia was founded as a Roman colony by the consul Decimus
+         Junius Brutus Callaicus in 138 BC and called Valentia Edetanorum. In
+         714, Moroccan and Arab Moors occupied the city, introducing their
+         language, religion and customs; they implemented improved irrigation
+         systems and the cultivation of new crops as well. Valencia was the
+         capital of the Taifa of Valencia. In 1238 the Christian king James I of
+         Aragon conquered the city and divided the land among the nobles who
+         helped him conquer it, as witnessed in the Llibre del Repartiment. He
+         also created the new Kingdom of Valencia, which had its own laws
+         (Furs), with Valencia as its main city and capital. In the 18th century
+         Philip V of Spain abolished the privileges as punishment to the kingdom
+         of Valencia for aligning with the Habsburg side in the War of the
+         Spanish Succession.
+        </p>
+       </div>
+       <div
+        class="card__img"
+        style="
+         background-image: url(https://pixabay.com/get/g0bdc0e0e4ca157470f85b81eb5888ffd1e22bbef0be2f9aeaf30f1b1e80e22da07a2f5b8f26c737544d7cb90bd5b0a6d76a8d1d088f7e061622056addc8581fc_1280.jpg);
+         height: 40rem;
+        "
+       ></div>
+      </div>
+      <div class="modal-footer">
+       <h3>Spain</h3>
+       <img src="https://restcountries.eu/data/esp.svg" />
+       <div class="content">
+        <p>Population: 46.438.422</p>
+        <p>Capital city: Madrid</p>
+        <p>Langauge: Spanish</p>
+        <p>Currency: Euro</p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+  <section class="section yourTrip">
+   <h2>Your Trips</h2>
+   <div class="cards" id="cards"></div>
+  </section>
+  <footer class="footer">
+   <p>Made by Pawel Rugala</p>
+   <p>GitHub</p>
+   <p>LinkedIn</p>
+   <p>Facebook</p>
+  </footer>
+ </body>
 </html>
