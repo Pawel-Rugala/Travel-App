@@ -10,6 +10,7 @@ const handleSubmit = (e) => {
   checkin: checkIn.value,
  };
  Client.postData(
+  //This is necessary in orer to work in Heroku & Dev env
   window.location.href.includes("localhost")
    ? "http://localhost:8081/fetch"
    : "/fetch",
