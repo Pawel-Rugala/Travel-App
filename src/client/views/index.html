@@ -16,13 +16,13 @@
      <!-- Modal content -->
      <div class="addContent">
       <div class="modal-header">
+       <h2>Where are you going next?</h2>
        <span id="closeBtn" class="close">&times;</span>
-       <h2>Modal Header</h2>
       </div>
       <div class="modal-body">
        <form onsubmit="return Client.handleSubmit(event)">
         <label for="loc">Location</label>
-        <input type="text" name="loc" id="loc" />
+        <input type="text" name="loc" id="loc" required />
         <label for="checkin">Check in</label>
         <input type="date" name="checkin" id="checkin" />
         <button type="submit">Submit</button>
@@ -40,6 +40,7 @@
         <div></div>
        </div>
       </div>
+      <p id="err"></p>
      </div>
     </div>
    </nav>

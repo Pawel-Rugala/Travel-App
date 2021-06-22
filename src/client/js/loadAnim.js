@@ -1,10 +1,12 @@
+const { load } = require("dotenv");
+
 const loadAnimation = (state) => {
  const ele = document.querySelector(".lds-roller");
  if (state) {
-  ele.style.display = "inline-block";
+  return (ele.style.display = "inline-block");
  } else {
-  ele.style.display = "none";
+  return (ele.style.display = "none");
  }
 };
 
-export default loadAnimation;
+module.exports = loadAnimation;

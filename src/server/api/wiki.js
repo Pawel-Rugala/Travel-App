@@ -8,8 +8,9 @@ const wiki = async (location) => {
   const newData = await res.json();
   if (newData.query.pages.length > 0) {
    return newData.query.pages[0].extract;
+  } else {
+   throw "no data";
   }
-  throw "no data";
  } catch (err) {
   console.log("error", err);
  }

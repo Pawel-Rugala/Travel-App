@@ -28,6 +28,7 @@
 
 .section {
  @include sectionPadding;
+ flex-grow: 1;
 }
 
 .cards {
@@ -76,6 +77,10 @@
 }
 
 .footer {
+ background-color: $black;
+ color: $white;
+ justify-content: space-evenly;
+ display: flex;
  @include sectionPadding;
 }
 
@@ -252,4 +257,12 @@
   top: 0;
   opacity: 1;
  }
+}
+
+.yourTrip {
+ display: none;
+}
+
+#err {
+ display: none;
 }

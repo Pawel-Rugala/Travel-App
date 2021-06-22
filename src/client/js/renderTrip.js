@@ -53,9 +53,13 @@ const renderTrip = (data) => {
        <h3>${data.countryName}</h3>
        <img src=${data.flag} >
        <div class="content">
-        <p>Population: ${data.population.toLocaleString(undefined, {
-         minimumFractionDigits: 0,
-        })}</p>
+        <p>Population: ${
+         data.population
+          ? data.population.toLocaleString(undefined, {
+             minimumFractionDigits: 0,
+            })
+          : "not available"
+        }</p>
         <p>Capital city: ${data.capital}</p>
         <p>Language: ${data.languages[0].name}</p>
         <p>Currency: ${data.currencies[0].name}</p>
@@ -66,7 +70,9 @@ const renderTrip = (data) => {
     `;
  const cards = document.getElementById("cards");
  const popular = document.querySelector(".popular");
+ const yourTrip = document.querySelector(".yourTrip");
  popular.style.display = "none";
+ yourTrip.style.display = "block";
  return cards.insertAdjacentHTML("beforeend", element);
 };
 

@@ -28,6 +28,7 @@ app.post("/fetch", async (req, res) => {
  const pixabayApi = process.env.PIXABAY;
  const { location, checkin } = req.body;
  let container = {};
+ let error = {};
 
  //Geolocation information
  await geoNames(location, geoApi)
@@ -46,9 +47,11 @@ app.post("/fetch", async (req, res) => {
      countryName,
      countryCode,
     };
-   } else throw "error";
+   } else {
+    throw "no data";
+   }
   })
-  .catch((err) => console.log("runs", err));
+  .catch((err) => (error = { ...error, geo: err }));
  // WeahterBit current weather information
  await weatherbit(container.lat, container.lng, weatherApi)
   .then((data) => {
@@ -61,66 +64,80 @@ app.post("/fetch", async (req, res) => {
      sunset,
      wind_spd,
     };
+   } else {
+    throw "no data";
    }
   })
-  .catch((err) => {
-   console.log("runs", err);
-  });
+  .catch((err) => (error = { ...error, weather: err }));
  await wiki(container.userLocation)
   .then((data) => {
-   container = {
-    ...container,
-    cityInfo: data,
-   };
+   if (data) {
+    container = {
+     ...container,
+     cityInfo: data,
+    };
+   } else {
+    throw "no data";
+   }
   })
-  .catch((err) => {
-   console.log("wiki", err);
-  });
+  .catch((err) => (error = { ...error, wikiCity: err }));
  await wiki(container.countryName)
   .then((data) => {
-   container = {
-    ...container,
-    countryInfo: data,
-   };
+   if (data) {
+    container = {
+     ...container,
+     countryInfo: data,
+    };
+   } else {
+    throw "no data";
+   }
   })
-  .catch((err) => {
-   console.log("wiki", err);
-  });
+  .catch((err) => (error = { ...error, wikiCoun: err }));
  await countries(container.countryCode)
   .then((data) => {
-   container = {
-    ...container,
-    ...data,
-   };
+   if (data) {
+    container = {
+     ...container,
+     ...data,
+    };
+   } else {
+    throw "no data";
+   }
   })
-  .catch((err) => {
-   console.log("contry: ", err);
-  });
+  .catch((err) => (error = { ...error, Coun: err }));
  await pixabay(pixabayApi, container.userLocation)
   .then((data) => {
-   container = {
-    ...container,
-    cityPreview: data.previewURL,
-    cityWeb: data.webformatURL,
-    cityLarge: data.largeImageURL,
-   };
+   if (data) {
+    container = {
+     ...container,
+     cityPreview: data.previewURL,
+     cityWeb: data.webformatURL,
+     cityLarge: data.largeImageURL,
+    };
+   } else {
+    throw "no data";
+   }
   })
-  .catch((err) => {
-   console.log("pixabay: ", err);
-  });
+  .catch((err) => (error = { ...error, PicCity: err }));
  await pixabay(pixabayApi, container.countryName)
   .then((data) => {
-   container = {
-    ...container,
-    countryPreview: data.previewURL,
-    countryWeb: data.webformatURL,
-    countryLarge: data.largeImageURL,
-   };
+   if (data) {
+    container = {
+     ...container,
+     countryPreview: data.previewURL,
+     countryWeb: data.webformatURL,
+     countryLarge: data.largeImageURL,
+    };
+   } else {
+    throw "no data";
+   }
   })
-  .catch((err) => {
-   console.log("pixabay: ", err);
-  });
- res.send(container).status(200).end();
+  .catch((err) => (error = { ...error, PicCoun: err }));
+ if (error.geo) {
+  res.status(400).send(error);
+ } else {
+  res.send(container).status(200).end();
+ }
 });
 
 app.listen(8081, function () {
