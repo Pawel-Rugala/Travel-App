@@ -1,4 +1,4 @@
-const postData = async (url = "http://localhost:8081/fetch", data) => {
+const postData = async (url = "/fetch", data) => {
  const res = await fetch(url, {
   method: "POST",
   credentials: "same-origin",
