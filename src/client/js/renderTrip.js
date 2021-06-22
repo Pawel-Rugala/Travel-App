@@ -73,7 +73,8 @@ const renderTrip = (data) => {
  const yourTrip = document.querySelector(".yourTrip");
  popular.style.display = "none";
  yourTrip.style.display = "block";
+ Client.checkModals();
  return cards.insertAdjacentHTML("beforeend", element);
 };
 
-export default renderTrip;
+module.exports = renderTrip;

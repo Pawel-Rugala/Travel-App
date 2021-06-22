@@ -15,4 +15,4 @@ const postData = async (url = "http://localhost:8081/fetch", data) => {
  }
 };
 
-export default postData;
+module.exports = postData;

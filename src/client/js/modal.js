@@ -20,4 +20,4 @@ const checkModals = () => {
  };
 };
 
-export default checkModals;
+module.exports = checkModals;

@@ -4,9 +4,9 @@ const onload = () => {
   return localStorage.setItem("trips", JSON.stringify([]));
  }
  if (trips.length > 0) {
-  return Client.renderTrips(trips);
+  Client.renderTrips(trips);
+  return Client.checkModals();
  }
- Client.checkModals();
 };
 
 export default onload;

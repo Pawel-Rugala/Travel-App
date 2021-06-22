@@ -6,7 +6,6 @@ const renderTrips = () => {
    return Client.renderTrip(trip);
   });
  }
- Client.checkModals();
 };
 
-export default renderTrips;
+module.exports = renderTrips;

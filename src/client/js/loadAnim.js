@@ -1,5 +1,3 @@
-const { load } = require("dotenv");
-
 const loadAnimation = (state) => {
  const ele = document.querySelector(".lds-roller");
  if (state) {
