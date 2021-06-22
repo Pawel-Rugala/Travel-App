@@ -19,8 +19,7 @@ app.use(cors());
 //Here we are configuring express to use body-parser as middleware.
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
-//api.geonames.org/postalCodeSearch?postalcode=9011&maxRows=10&username=demo
+app.use(express.static("dist"));
 
 app.post("/fetch", async (req, res) => {
  const geoApi = process.env.GEO_API;
