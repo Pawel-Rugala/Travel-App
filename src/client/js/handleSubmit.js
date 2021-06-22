@@ -9,7 +9,12 @@ const handleSubmit = (e) => {
   location: location.value,
   checkin: checkIn.value,
  };
- Client.postData("/fetch", reqData)
+ Client.postData(
+  window.location.href.includes("localhost")
+   ? "http://localhost:8081/fetch"
+   : "/fetch",
+  reqData
+ )
   .then((data) => {
    if (data.geo) {
     const errField = document.getElementById("err");

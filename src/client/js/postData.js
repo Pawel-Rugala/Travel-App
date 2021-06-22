@@ -1,4 +1,13 @@
-const postData = async (url = "/fetch", data) => {
+const URL = () => {
+ window.location.href.includes("localhost");
+};
+
+const postData = async (
+ url = window.location.href.includes("localhost")
+  ? "http://localhost:8081/fetch"
+  : "/fetch",
+ data
+) => {
  const res = await fetch(url, {
   method: "POST",
   credentials: "same-origin",
