@@ -5,6 +5,12 @@
 # App is deployed on Heroku
 [Live Demo](https://travel-planner-app001.herokuapp.com/)
 
+# StandOut
+- Pull in an image for the country from Pixabay API when the entered location brings up no results (good for obscure localities).
+- Integrate the REST Countries API to pull in data for the country being visited.
+- Use Local Storage to save the data so that when they close, then revisit the page, their information is still there.
+- Get Information about the city from Wikipedia. If not found get information about the country
+  
  # How to launch application locally
  once the code is downloaded the steps are as follow:
 - STEP 1: Run in terminal
